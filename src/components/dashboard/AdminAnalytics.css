@@ -1,0 +1,71 @@
+/* src/components/dashboard/AdminAnalytics.css */
+
+.admin-analytics-page {
+    background-color: #f0f2f5; /* Slightly different background for analytics section */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.analytics-chart-card {
+    border: none;
+    border-radius: 0.5rem; /* Consistent rounded corners */
+    background-color: #fff;
+    overflow: hidden; /* In case charts try to overflow */
+}
+
+.analytics-card-header {
+    background-color: #f8f9fa; /* Light header background */
+    border-bottom: 1px solid #e9ecef;
+    padding: 0.9rem 1.25rem;
+    font-weight: 600;
+    color: #343a40;
+    display: flex;
+    align-items: center;
+}
+.analytics-card-header i {
+    font-size: 1.1rem;
+}
+
+
+.analytics-chart-card .card-body {
+    padding: 1.5rem;
+}
+
+.chart-container {
+    position: relative; /* Needed for chart.js responsiveness */
+    width: 100%;
+}
+.chart-container-pie { /* Specific for pie/doughnut that might need less width constraint */
+    position: relative;
+    max-width: 400px; /* Prevent pie/doughnut from becoming too large */
+    margin: auto; /* Center if max-width is applied */
+}
+
+/* You can add more specific styling for chart elements if needed */
+/* For example, to style the tooltips or legend further if bootstrap/chart.js defaults aren't enough */
+
+/* Add some subtle animations for card appearance if desired */
+.analytics-chart-card {
+    animation: fadeInScale 0.5s ease-out forwards;
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+@keyframes fadeInScale {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Stagger animation for cards */
+.admin-analytics-page .row > .col,
+.admin-analytics-page .row > [class*="col-"] {
+    /* This applies to direct children columns of the row */
+}
+
+.admin-analytics-page .row > .col:nth-child(1) .analytics-chart-card { animation-delay: 0.1s; }
+.admin-analytics-page .row > .col:nth-child(2) .analytics-chart-card { animation-delay: 0.2s; }
+.admin-analytics-page .row > .col:nth-child(3) .analytics-chart-card { animation-delay: 0.3s; }
+.admin-analytics-page .row > .col:nth-child(4) .analytics-chart-card { animation-delay: 0.4s; }
+/* Add more if you have more cards in a single row */

@@ -1,0 +1,137 @@
+/* src/components/feedback/Feedback.css */
+.feedback-page {
+    background-color: #f8f9fa;
+    padding: 3rem 0;
+    min-height: calc(100vh - 140px); /* Adjust based on header/footer height */
+  }
+
+  .feedback-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .feedback-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+    overflow: hidden; /* Ensures rounded corners apply */
+  }
+
+  .feedback-card .card-header {
+    background-color: #0066cc;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+  }
+
+  .feedback-card .card-body {
+    padding: 1.5rem;
+  }
+
+  .feedback-list-group .list-group-item {
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 1.2rem 1.5rem;
+    transition: background-color 0.2s ease;
+  }
+
+  .feedback-list-group .list-group-item:last-child {
+    border-bottom: none;
+  }
+
+  .feedback-list-group .list-group-item:hover {
+    background-color: #f8f9fa;
+  }
+
+  .feedback-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .feedback-author {
+    font-weight: 600;
+    color: #333;
+  }
+
+  .feedback-rating {
+    color: #f4b400; /* Gold color for stars */
+  }
+
+  .feedback-timestamp {
+    font-size: 0.8rem;
+    color: #888;
+    margin-left: auto; /* Pushes timestamp to the right */
+    padding-left: 1rem; /* Space before timestamp */
+  }
+
+  .feedback-message {
+    color: #555;
+    margin-bottom: 1rem;
+    white-space: pre-wrap; /* Preserves line breaks */
+  }
+
+  .feedback-actions button {
+    margin-left: 0.5rem;
+    font-size: 0.85rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .feedback-actions .btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+  }
+
+  .feedback-actions .btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+  }
+
+  .feedback-actions .btn-outline-secondary {
+      color: #6c757d;
+      border-color: #6c757d;
+  }
+
+  .feedback-actions .btn-outline-secondary:hover {
+      background-color: #6c757d;
+      color: white;
+  }
+
+
+  .no-feedback-message {
+    text-align: center;
+    color: #777;
+    padding: 2rem;
+    font-style: italic;
+  }
+
+  .modal-header {
+    background-color: #0066cc;
+    color: white;
+  }
+
+  .modal-header .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%); /* Make close button white */
+  }
+
+  .modal-title {
+    font-weight: 600;
+  }
+
+  /* Form specific */
+  .feedback-form .form-label {
+    font-weight: 500;
+  }
+
+  .feedback-form .btn-primary {
+    background-color: #0066cc;
+    border-color: #0066cc;
+  }
+
+  .feedback-form .btn-primary:hover {
+    background-color: #0055b3;
+    border-color: #004499;
+  }

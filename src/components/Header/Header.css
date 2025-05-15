@@ -1,0 +1,179 @@
+/* src/components/Header/Header.css */
+.app-header {
+  background-color: #ffffff;
+  padding: 0.8rem 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-section-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  color: #007bff;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  margin-right: 0.75rem;
+}
+
+.logo-section h1 {
+  font-size: 1.75rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.main-nav ul, .auth-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.main-nav li, .auth-section li {
+  margin-left: 1.5rem;
+}
+
+.main-nav a, .auth-section a:not(.auth-link-btn) {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.2s ease-in-out;
+}
+
+.main-nav a:hover, .auth-section a:not(.auth-link-btn):hover,
+.main-nav a.active-link {
+  color: #007bff;
+}
+
+.main-nav a.active-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff;
+}
+
+.auth-link-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid transparent;
+}
+
+.auth-link-btn.login {
+  color: #007bff;
+  border-color: #007bff;
+}
+.auth-link-btn.login:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.auth-link-btn.register {
+  background-color: #007bff;
+  color: #fff;
+}
+.auth-link-btn.register:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* --- NavDropdown Styling --- */
+.user-dropdown .dropdown-toggle {
+  color: #333;
+  font-weight: 500;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0.5rem 0 !important; /* Keep toggle padding minimal */
+  display: flex; /* To align icon and text nicely */
+  align-items: center;
+}
+.user-dropdown .dropdown-toggle::after {
+    margin-left: 0.5em; /* Increased space for dropdown arrow */
+}
+.user-dropdown .dropdown-toggle i.fa-user-circle {
+    font-size: 1.4rem; /* Slightly larger user icon */
+    margin-right: 0.5rem; /* Space between icon and username */
+    color: #6c757d; /* Softer color for the icon */
+}
+
+.user-dropdown .dropdown-toggle:hover,
+.user-dropdown .dropdown-toggle:focus {
+  color: #007bff;
+}
+.user-dropdown .dropdown-toggle:hover i.fa-user-circle {
+    color: #007bff; /* Icon color change on hover */
+}
+
+
+.user-dropdown .dropdown-menu {
+  border-radius: 0.375rem; /* Bootstrap's standard border-radius */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Softer shadow */
+  border: 1px solid #dee2e6; /* Standard Bootstrap border color */
+  padding-top: 0.5rem;    /* Add some padding at the top of the menu */
+  padding-bottom: 0.5rem; /* Add some padding at the bottom of the menu */
+  min-width: 220px; /* Ensure a decent minimum width for the dropdown */
+}
+
+.user-dropdown .dropdown-item {
+  font-weight: 400; /* Regular font weight for items */
+  /* Increased padding for more space */
+  padding: 0.75rem 1.5rem; /* Top/Bottom: 0.75rem, Left/Right: 1.5rem */
+  display: flex; /* Use flex to align icon and text */
+  align-items: center; /* Vertically align icon and text */
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.user-dropdown .dropdown-item i {
+  width: 24px; /* Fixed width for icons to ensure alignment */
+  margin-right: 0.75rem; /* Space between icon and text */
+  color: #6c757d; /* Softer color for icons in items */
+  text-align: center; /* Center icon within its fixed width */
+  font-size: 0.9rem; /* Adjust icon size if needed */
+}
+
+.user-dropdown .dropdown-item:hover {
+  background-color: #e9ecef; /* Lighter hover background */
+  color: #0056b3; /* Darker blue on hover for text */
+}
+.user-dropdown .dropdown-item:hover i {
+    color: #0056b3; /* Icon color change on item hover */
+}
+
+.user-dropdown .dropdown-item:active {
+    background-color: #0056b3; /* Active state background */
+    color: #fff;
+}
+.user-dropdown .dropdown-item:active i {
+    color: #fff;
+}
+
+
+.user-dropdown .dropdown-divider {
+    margin: 0.5rem 0; /* Add some vertical margin to dividers */
+    border-top: 1px solid #e0e0e0; /* Lighter divider */
+}

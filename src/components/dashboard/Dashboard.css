@@ -1,0 +1,328 @@
+/* src/Dashboard.css - Global styles for all dashboards */
+
+.dashboard-page-container {
+  background-color: #f8f9fa; /* Light background for dashboard area */
+  min-height: calc(100vh - 120px); /* Adjust if header/footer height changes */
+}
+
+.dashboard-header .dashboard-title {
+  font-weight: 300; /* Lighter font weight for title */
+  color: #343a40;
+}
+.dashboard-header .lead {
+    font-size: 1.1rem;
+}
+
+.dashboard-widget-card, .dashboard-stat-card {
+  margin-bottom: 1.5rem;
+  border: none; /* Remove default border */
+  border-radius: 0.5rem; /* Consistent border radius */
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Subtle shadow */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.dashboard-widget-card:hover, .dashboard-stat-card:hover {
+    /* transform: translateY(-3px); */
+    /* box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1); */
+}
+
+
+.dashboard-widget-card .card-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e9ecef;
+  font-weight: 600;
+  color: #495057;
+  padding: 0.85rem 1.25rem;
+}
+.dashboard-widget-card .card-header i {
+    margin-right: 0.5rem;
+    color: #007bff; /* Primary color for icons in header */
+}
+
+.dashboard-widget-card .list-group-item {
+    border-left: none;
+    border-right: none;
+}
+.dashboard-widget-card .list-group-item:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.dashboard-widget-card .list-group-item:last-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
+}
+
+
+/* Stat Cards (can be customized per dashboard too) */
+.dashboard-stat-card .card-body {
+  position: relative;
+  padding: 1.5rem;
+}
+.dashboard-stat-card .card-title { /* For the "Total Users" text */
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+.dashboard-stat-card .display-6, .dashboard-stat-card .card-text.display-6 { /* For the number */
+  font-size: 2.25rem; /* Larger number */
+  font-weight: 700;
+  margin-bottom: 0;
+}
+.dashboard-stat-card i.fa-3x { /* For the icon on the right */
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  transform: translateY(-50%);
+  opacity: 0.2; /* Make icon subtle */
+  font-size: 3.5rem !important; /* Larger icon */
+}
+.dashboard-stat-card .card-footer {
+    background-color: rgba(0,0,0,0.05);
+    border-top: none;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+.dashboard-stat-card .card-footer:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+
+/* Tables in dashboards */
+.admin-table, .faculty-table, .user-table { /* Common class for dashboard tables */
+    font-size: 0.9rem;
+}
+.admin-table thead th, .faculty-table thead th, .user-table thead th {
+    background-color: #f8f9fa;
+    border-bottom-width: 1px;
+    font-weight: 600;
+    color: #495057;
+}
+.admin-table td, .faculty-table td, .user-table td {
+    vertical-align: middle;
+}
+.admin-table .action-btn, .faculty-table .action-btn, .user-table .action-btn {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.75rem;
+    margin-right: 0.25rem;
+}
+.admin-table .action-btn i, .faculty-table .action-btn i, .user-table .action-btn i {
+    font-size: 0.8rem; /* Ensure icons are not too large in small buttons */
+}
+
+/* Badges */
+.badge.role-badge {
+    font-size: 0.75em;
+    padding: .35em .65em;
+    font-weight: 500;
+}
+.badge.status-badge {
+    font-size: 0.75em;
+    padding: .35em .65em;
+    font-weight: 500;
+}
+
+/* Custom badge backgrounds for status (if not using Bootstrap text-bg-*) */
+.badge.bg-success-light { background-color: rgba(40, 167, 69, 0.15) !important; color: #198754 !important; }
+.badge.bg-danger-light { background-color: rgba(220, 53, 69, 0.15) !important; color: #dc3545 !important; }
+.badge.bg-warning-light { background-color: rgba(255, 193, 7, 0.15) !important; color: #cca006 !important; }
+.badge.bg-info-light { background-color: rgba(23, 162, 184, 0.15) !important; color: #0c8599 !important; }
+
+
+/* Modal styling */
+.modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+.modal-header .modal-title {
+    font-weight: 500;
+}
+
+/* Course Card (for UserDashboard and potentially other places) */
+.course-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  height: 100%; /* For consistent card heights in a row */
+  display: flex;
+  flex-direction: column;
+}
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+}
+.course-card .card-img-top {
+  width: 100%;
+  height: 180px; /* Fixed height for course images */
+  object-fit: cover; /* Crop image to fit */
+}
+.course-card .card-body {
+  flex-grow: 1; /* Allow body to take remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes actions to bottom if card-text is short */
+}
+.course-card .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+.course-card .card-subtitle {
+  font-size: 0.85rem;
+}
+.course-card .card-text {
+  font-size: 0.9rem;
+  color: #555;
+  flex-grow: 1; /* Allow text to take space before actions */
+  margin-bottom: 1rem;
+}
+.course-card .badge {
+    font-size: 0.75rem;
+}
+.course-card .course-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #28a745; /* Green for price */
+}
+
+/* src/Dashboard.css (or a new admin_dashboard.css) */
+.nav-pills-custom .nav-link {
+  color: #495057;
+  background-color: #e9ecef;
+  margin-right: 0.5rem;
+  border-radius: 0.3rem;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+}
+
+.nav-pills-custom .nav-link.active,
+.nav-pills-custom .show > .nav-link {
+  color: #fff;
+  background-color: #007bff;
+}
+.nav-pills-custom .nav-link:hover {
+  background-color: #dee2e6;
+}
+.nav-pills-custom .nav-link.active:hover {
+  background-color: #0056b3;
+}
+
+
+
+.user-dashboard-container .section-title {
+  font-weight: 500;
+  color: #343a40;
+  border-bottom: 2px solid #007bff; /* Primary color underline */
+  padding-bottom: 0.5rem;
+  display: inline-block; /* So border only underlines text */
+}
+
+.user-dashboard-course-card {
+  /* h-100 in Bootstrap class handles height consistency within the Row's columns */
+  /* border: 1px solid #dee2e6; Optional border */
+  border-radius: 0.375rem; /* Bootstrap's default card radius */
+  overflow: hidden; /* Ensures child elements don't break rounded corners */
+  display: flex; /* Make card itself a flex container */
+  flex-direction: column; /* Stack image, body vertically */
+}
+
+.user-dashboard-card-img {
+  width: 100%;
+  height: 180px; /* Fixed height for images */
+  object-fit: cover; /* Ensures image covers the area, might crop */
+}
+
+.user-dashboard-course-card .card-body {
+  padding: 1rem; /* Consistent padding */
+  /* d-flex flex-column in JSX makes this a flex container for its children */
+}
+
+.user-dashboard-course-card .course-card-title {
+  font-size: 1.05rem; /* Slightly smaller than main page title */
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 0.3rem; /* Adjust spacing */
+  /* For text overflow if title is too long - 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 2.5em; /* Ensure space for two lines, adjust based on font size/line height */
+  line-height: 1.25em;
+}
+
+.user-dashboard-course-card .course-card-description {
+  font-size: 0.875rem;
+  color: #6c757d; /* Muted text color */
+  line-height: 1.4;
+  flex-grow: 1; /* Allows description to take available space before the button */
+  margin-bottom: 1rem; /* Space before button */
+
+  /* For text overflow if description is too long - 3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Show max 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 4.2em; /* Approx 3 lines, adjust based on font-size/line-height */
+}
+
+.user-dashboard-course-card .course-price {
+  font-size: 1.1rem;
+  color: #198754; /* Bootstrap success green */
+}
+
+.user-dashboard-course-card .mt-auto {
+  /* This Bootstrap class helps push the button to the bottom */
+  /* if Card.Body is d-flex flex-column */
+}
+
+
+/* In src/Dashboard.css or a new AdminDashboard.css */
+
+.admin-dashboard-container {
+  /* General container styling if needed */
+}
+
+.admin-main-nav.nav-pills-custom .nav-link { /* Targeting the main admin tabs */
+  font-size: 1rem; /* Slightly larger font for main tabs */
+  padding: 0.75rem 1.25rem;
+}
+.admin-main-nav.nav-pills-custom .nav-link i {
+  font-size: 1.1rem; /* Larger icons for main tabs */
+}
+
+
+/* Sub-tabs styling (Users, Courses, Enrollments under Management) */
+.sub-nav-tabs.nav-tabs {
+  border-bottom: 1px solid #dee2e6; /* Standard Bootstrap tab border */
+}
+.sub-nav-tabs.nav-tabs .nav-link {
+  border: 1px solid transparent;
+  border-top-left-radius: .375rem;
+  border-top-right-radius: .375rem;
+  color: #6c757d; /* Muted color for inactive sub-tabs */
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+}
+.sub-nav-tabs.nav-tabs .nav-link:hover {
+  border-color: #e9ecef #e9ecef #dee2e6;
+  isolation: isolate;
+  color: #0056b3;
+}
+.sub-nav-tabs.nav-tabs .nav-link.active {
+  color: #0056b3; /* Active tab color */
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff; /* Make bottom border "disappear" */
+  font-weight: 600;
+}
+.sub-nav-tabs.nav-tabs .nav-link i {
+  margin-right: 0.3rem; /* Smaller margin for icons in sub-tabs */
+}
+
+/* Ensure content under sub-tabs has some top padding */
+.sub-nav-tabs + .tab-content {
+  padding-top: 1rem;
+}

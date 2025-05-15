@@ -1,0 +1,61 @@
+/* src/components/auth/Auth.css */
+.auth-page {
+  min-height: calc(100vh - 120px); /* Adjust based on header/footer height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  background-color: #eef2f5; /* Light grey background */
+}
+
+.auth-card {
+  border: none; /* Remove default card border */
+  border-radius: 0.5rem; /* Softer corners */
+  background-color: #fff;
+}
+
+.auth-card .card-body {
+  padding: 2.5rem; /* More padding inside card */
+}
+
+.auth-card h2 {
+  color: #333;
+}
+
+.auth-card .form-label {
+  font-weight: 500;
+  color: #555;
+}
+
+.auth-card .form-control {
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ced4da;
+}
+.auth-card .form-control:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.auth-button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 0.25rem;
+}
+
+.auth-switch-link {
+  color: #555;
+}
+.auth-switch-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+.auth-switch-link a:hover {
+  text-decoration: underline;
+}
+
+.alert.small {
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,143 @@
+/* AI Banner Styling */
+.ai-banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 3rem;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(120deg, #051937, #004d7a, #008793);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .neural-network-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .ai-banner-content {
+    position: relative;
+    z-index: 2;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    color: white;
+  }
+  
+  .ai-text-effect {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #ffffff, #88c0ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: textGlow 2s ease-in-out infinite alternate;
+    text-shadow: 0 0 15px rgba(100, 181, 246, 0.5);
+  }
+  
+  .ai-banner-content p {
+    font-size: 1.4rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .ai-explore-btn {
+    position: relative;
+    background: linear-gradient(90deg, #0066cc, #2c87ff);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    width: fit-content;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(44, 135, 255, 0.4);
+  }
+  
+  .ai-explore-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(44, 135, 255, 0.5);
+  }
+  
+  .btn-glow {
+    position: absolute;
+    top: -10%;
+    left: -30%;
+    width: 60%;
+    height: 150%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-25deg);
+    transition: all 0.5s ease;
+    animation: btnGlow 2.5s infinite;
+  }
+  
+  /* Animations */
+  @keyframes textGlow {
+    0% {
+      text-shadow: 0 0 5px rgba(100, 181, 246, 0.5);
+    }
+    100% {
+      text-shadow: 0 0 20px rgba(100, 181, 246, 0.8), 0 0 30px rgba(100, 181, 246, 0.6);
+    }
+  }
+  
+  @keyframes btnGlow {
+    0% {
+      left: -30%;
+    }
+    100% {
+      left: 130%;
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .ai-banner {
+      height: 350px;
+    }
+    
+    .ai-text-effect {
+      font-size: 2.5rem;
+    }
+    
+    .ai-banner-content p {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .ai-banner {
+      height: 300px;
+    }
+    
+    .ai-banner-content {
+      padding: 2rem;
+    }
+    
+    .ai-text-effect {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .ai-banner-content p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .ai-explore-btn {
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
