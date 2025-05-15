@@ -3,7 +3,7 @@
   
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://spacesugam.github.io/Learn_Hub/",
+  "homepage": "https://spacesugam.github.io/Learn_Hub",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",

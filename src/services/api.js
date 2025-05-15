@@ -1,5 +1,5 @@
 // src/services/api.js
-const API_BASE_URL = '/api'; // db.json is in public/api
+
 
 let DB_CACHE = {
     users: [],
@@ -13,8 +13,16 @@ const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const initializeData = async () => {
     if (dataInitialized) return;
     try {
-        const response = await fetch(`${API_BASE_URL}/db.json?${new Date().getTime()}`); // Cache buster
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status} for db.json`);
+        // Construct the path relative to the application's root on GitHub Pages
+        // process.env.PUBLIC_URL is set by Create React App during build
+        // It will be '/Learn_Hub' on GitHub Pages, or '' locally
+        const dbJsonPath = `${process.env.PUBLIC_URL}/api/db.json?${new Date().getTime()}`;
+        console.log("Attempting to fetch db.json from:", dbJsonPath); // For debugging
+
+        const response = await fetch(dbJsonPath);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status} for ${dbJsonPath}`);
+        }
         const jsonData = await response.json();
         DB_CACHE = {
             users: jsonData.users.map(u => ({ ...u, enrolledCourses: u.enrolledCourses || [] })),
@@ -22,14 +30,14 @@ const initializeData = async () => {
             siteStats: jsonData.siteStats
         };
         dataInitialized = true;
-        console.log("Mock API: Data initialized", DB_CACHE);
+        console.log("Mock API: Data initialized from deployed db.json", DB_CACHE);
     } catch (error) {
-        console.error("Mock API: Failed to initialize data:", error);
-        // Fallback or re-throw if critical
-        DB_CACHE = { users: [], courses: [], siteStats: { totalRevenue: 0 } };
-        dataInitialized = true; // Prevent re-attempts
+        console.error("Mock API: Failed to initialize data from deployed db.json:", error);
+        DB_CACHE = { users: [], courses: [], siteStats: { totalRevenue: 0 } }; // Fallback
+        dataInitialized = true;
     }
 };
+
 
 // --- User API ---
 export const getUsers = async () => {
